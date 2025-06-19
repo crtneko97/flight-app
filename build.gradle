@@ -7,7 +7,6 @@ plugins {
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 
-// Keep your Java toolchain for consistency across machines
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
@@ -21,15 +20,12 @@ repositories {
 }
 
 dependencies {
-    // Spring Boot web & JPA
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
-    // SQLite support
     implementation 'org.xerial:sqlite-jdbc:3.41.2.1'
-    implementation 'com.github.gwenn:sqlite-dialect:0.1.2'
-
-    // Test support
+    implementation 'org.hibernate.orm:hibernate-community-dialects:6.2.2.Final'
+    
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

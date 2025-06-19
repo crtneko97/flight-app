@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:sqlite:/app/db/flights.db
+    driver-class-name: org.sqlite.JDBC
+
+  jpa:
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 8080
+
+security:
+  user:
+    name: admin
+    password: changeMe123
+    roles: ADMIN

@@ -3,3 +3,6 @@
 
 # Ignore Gradle build output directory
 build
+
+# local SQLite DB
+/src/main/resources/db/*.db
