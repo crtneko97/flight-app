@@ -17,3 +17,4 @@ security:
     name: admin
     password: changeMe123
     roles: ADMIN
+
