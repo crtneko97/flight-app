@@ -1,9 +1,9 @@
 package com.example.flightbooking.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Flight {
@@ -17,9 +17,17 @@ public class Flight {
     private String destination;
     private String departureTime;
 
+    @OneToMany(mappedBy = "flight", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Seat> seats = new ArrayList<>();
+
+
     public Flight() { }
 
-    // getters & setters
+
+
+    // + getter/setter for seats
+    public List<Seat> getSeats() { return seats; }
+    public void setSeats(List<Seat> seats) { this.seats = seats; }
 
     public Long getId() {
         return id;
